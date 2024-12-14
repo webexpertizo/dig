@@ -1,0 +1,379 @@
+/*Body Styling */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Header Styling */
+header {
+  background-color: #fff; /* White background for the header */
+  border-bottom: 1px solid #e6e6e6; /* Subtle border under the header */
+  position: sticky; /* Keeps header fixed at the top */
+  top: 0;
+  z-index: 1000; /* Ensures it stays on top of other elements */
+  padding-left: 10%; /* Padding on large screens */
+  padding-right: 10%; /* Padding on large screens */
+}
+
+/* Media Query for Adjusting Padding on Smaller Screens */
+@media (max-width: 1200px) {
+  header {
+    padding-left: 20px;  /* Less padding on smaller screens */
+    padding-right: 20px;  /* Less padding on smaller screens */
+  }
+}
+
+/* Navbar Container Styling */
+.navbar {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 0;
+  display: flex;
+  align-items: center;  /* Vertically center elements */
+  justify-content: space-between; /* Distribute logo, links, and button */
+}
+
+/* Logo Section Styling */
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #000;  /* Black color for the logo */
+}
+
+.logo a {
+  text-decoration: none;  /* Remove underline from the logo */
+  color: inherit;  /* Inherit logo text color */
+  font-size: 35px;  /* Larger text for the logo */
+}
+
+/* Navigation Links Styling */
+.nav-links {
+  list-style: none; /* Remove bullets from the list */
+  display: flex;
+  gap: 30px; /* Spacing between the links */
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  display: inline; /* Display links horizontally */
+}
+
+.nav-links a {
+  text-decoration: none; /* Remove underline from links */
+  color: #000; /* Black color for links */
+  font-size: 1rem;
+  font-weight: 500; /* Semi-bold text */
+  transition: color 0.3s ease-in-out; /* Smooth hover effect */
+}
+
+/* Hover Effect for Navigation Links */
+.nav-links a:hover {
+  color: #0095DA;  /* Change color on hover */
+}
+
+/* Call-to-Action Button Styling */
+.cta-button {
+  font-size: 1rem;
+  color: #fff;  /* White text for the button */
+  background-color: #0095DA; /* Button background */
+  padding: 10px 20px;  /* Spacing inside button */
+  border-radius: 25px;  /* Rounded corners */
+  text-decoration: none;
+  transition: background-color 0.3s ease-in-out; /* Smooth background-color transition */
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1); /* Shadow for button */
+  margin-right: 15px; /* Spacing between button and hamburger */
+}
+
+/* Hover Effect for Call-to-Action Button */
+.cta-button:hover {
+  background-color: #0095DA; /* Maintains the background color on hover */
+}
+/* Hamburger Menu for Mobile */
+.hamburger {
+  display: none; /* Initially hidden on desktop */
+  flex-direction: column; 
+  justify-content: space-between;
+  height: 20px;
+  width: 30px;
+  cursor: pointer;
+  position: relative;
+}
+
+.hamburger span {
+  background-color: #000;
+  height: 3px;
+  width: 100%;
+  border-radius: 5px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* When the hamburger menu is open, make it form an X */
+.hamburger.open span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg); 
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0; 
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg); 
+}
+
+/* Add responsive behavior: only show the hamburger on mobile screens */
+@media (max-width: 767px) {
+  .hamburger {
+    display: flex; /* Show hamburger on smaller screens */
+  }
+}
+
+/* For desktop: Make sure hamburger is hidden (no change needed, just clarify it's hidden by default) */
+@media (min-width: 768px) {
+  .hamburger {
+    display: none; /* Hidden by default on desktops */
+  }
+}
+
+/* Right-aligned section with CTA and Hamburger */
+.right-section {
+  display: flex;
+  align-items: center;
+}
+
+/* Media Query for Responsive Styles (Mobile Screens) */
+@media (max-width: 768px) {
+  /* Adjust Navigation Links Layout on Mobile */
+  .nav-links {
+    display: none; /* Hide links initially on mobile */
+    flex-direction: column; /* Stack links vertically */
+    gap: 15px; /* Spacing between links */
+    position: absolute; /* Positioning relative to viewport */
+    top: 60px; /* Position the menu below the header */
+    right: 20px; /* Align to the right */
+    background-color: #fff; /* White background */
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2); /* Shadow for dropdown */
+    padding: 15px 20px; /* Padding inside dropdown */
+    border-radius: 5px; /* Rounded corners */
+  }
+
+  /* Show Navigation Links when Active */
+  .nav-links.active {
+    display: flex; /* Show links when active */
+  }
+
+  /* Display Hamburger on Mobile */
+  .hamburger {
+    display: flex; /* Display hamburger icon */
+  }
+}
+
+
+
+
+
+
+ /* Section with background color and content */
+.bgclr {
+  background-color: #F3FBFE;
+ 
+}
+
+/* Section Heading and Subheading Styles */
+.why-choose-us {
+  text-align: center;  /* Center-align the text */
+  padding-top: 30px;  /* Add space on top */
+  margin-bottom: 0;  /* No extra space at the bottom */
+}
+
+.why-choose-us .heading {
+  font-weight: bold;  /* Make the heading bold */
+  color: #0095DA;  /* Blue color for the heading */
+  position: relative;
+  display: inline-block;
+  text-transform: uppercase;  /* Uppercase letters for consistency */
+  margin-bottom: 0;  /* No margin below the heading */
+  padding-bottom: 5px;  /* Space for underline */
+}
+
+.why-choose-us .heading::after {
+  content: "";  /* Empty content for line */
+  display: block;
+  width: 100%;  /* Full width under the heading */
+  height: 3px;  /* Line thickness */
+  background-color: #0095DA;  /* Line color */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+/* Title Heading Adjustment */
+.why-choose-us h1 {
+  margin-top: 5px;  /* Space between heading and subheading */
+}
+
+/* Feature Container - Flexbox Layout */
+.feature-container {
+  display: flex;
+  flex-wrap: wrap;  /* Allow wrapping for multiple items */
+  gap: 20px;  /* Space between items */
+  padding: 20px;  /* Add padding around */
+  width: 80%;  /* Control width */
+  padding-top: 30px;  /* Top padding for spacing */
+  padding-bottom: 50px;  /* bottom padding for spacing */
+  justify-content: center;  /* Center-align content */
+  margin: auto;  /* Center the container */
+}
+
+/* Feature Card Design */
+.feature-card {
+  background-color: #fff;  /* White background */
+  border-radius: 10px;  /* Rounded corners */
+  padding: 20px;  /* Padding inside cards */
+  flex: 1 1 calc(25% - 20px);  /* Responsive sizing */
+  text-align: center;  /* Centered text */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Subtle shadow */
+  transition: transform 0.2s ease;  /* Smooth hover effect */
+  max-width: 180px;  /* Max width constraint */
+  min-width: 180px;  /* Min width constraint to prevent shrinking */
+}
+
+/* Hover Effect - Card Movement */
+.feature-card:hover {
+  transform: translateY(-5px);  /* Lift card on hover */
+}
+
+/* Highlighted Feature Card Style */
+.feature-card.highlight {
+  background-color: #007ac3;  /* Highlight background */
+  color: #fff;  /* White text */
+}
+
+/* Icon Style in Feature Cards */
+.feature-card .icon {
+  font-size: 40px;  /* Icon size */
+  color: #007ac3;  /* Icon color */
+  margin-bottom: 15px;  /* Space below the icon */
+}
+
+/* Style for Highlighted Icon */
+.feature-card.highlight .icon {
+  color: #fff;  /* White icon in highlight */
+}
+
+/* Heading and Paragraph Styling inside Feature Cards */
+.feature-card h3 {
+  font-size: 20px;  /* Heading size */
+  margin-bottom: 10px;  /* Spacing below heading */
+  line-height: 1.2;  /* Line height for clarity */
+}
+
+.feature-card p {
+  font-size: 16px;  /* Font size for paragraph */
+  color: #666;  /* Light grey text color */
+  line-height: 1.5;  /* Improved text readability */
+}
+
+/* Text Color Adjustment in Highlighted Cards */
+.feature-card.highlight p {
+  color: #fff;  /* White text in highlighted card */
+}
+
+/* Hover Effect for Card Changes */
+.feature-card:hover {
+  background-color: #0095DA;  /* Change background color */
+  color: #fff;  /* Text turns white */
+}
+
+.feature-card:hover .icon {
+  color: #fff;  /* White icon color on hover */
+}
+
+.feature-card:hover h3,
+.feature-card:hover p {
+  color: #fff;  /* Ensure all text becomes white on hover */
+  
+}
+
+/* Responsive Design for Different Screen Sizes */
+
+/* Medium Screens (Tablets/Laptops) */
+@media (max-width: 1024px) {
+  .feature-card {
+    flex: 1 1 calc(25% - 20px);  /* 4 cards remain on screen */
+  }
+}
+
+/* Smaller Screens (Mobile/Tablets) */
+@media (max-width: 768px) {
+  .feature-card {
+    flex: 1 1 calc(50% - 20px);  /* Adjust to two cards per row */
+  }
+
+  .feature-card .icon {
+    font-size: 35px;  /* Smaller icon size */
+  }
+
+  .feature-card h3 {
+    font-size: 16px;  /* Scale down title size */
+  }
+
+  .feature-card p {
+    font-size: 14px;  /* Scale down paragraph size */
+  }
+}
+
+/* Small Screens (Phones) */
+@media (max-width: 480px) {
+ 
+
+  .feature-card {
+    padding: 15px;  /* Reduce padding */
+  }
+
+  .feature-card .icon {
+    font-size: 30px;  /* Further scale down icon size */
+  }
+
+  .feature-card h3 {
+    font-size: 14px;  /* Further reduce title size */
+  }
+
+  .feature-card p {
+    font-size: 12px;  /* Smaller font for paragraphs */
+  }
+}
+
+
+
+
+
+/* Styling for the footer */
+.footer {
+  text-align: center; /* Ensures the footer content (text) is centered */
+  font-size: 12px; /* Sets the font size for the footer text */
+  color: #666; /* Sets the color of the text to a light gray for contrast */
+  background-color: #f9f9f9; /* Sets a very light background color */
+  padding: 10px 0; /* Adds padding to the top and bottom of the footer */
+  border-top: 1px solid #ddd; /* Creates a thin border at the top of the footer */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Adds smooth transition effect on hover */
+}
+
+/* Styling for the text within the footer */
+.footer p {
+  margin: 0; /* Removes default margin around the <p> */
+  font-family: Arial, sans-serif; /* Applies a clean, sans-serif font to the text */
+}
+
+/* Remove text decoration for the link */
+.footer-link {
+  text-decoration: none; /* Removes underline */
+  color: inherit; /* Ensures the link color matches the surrounding text color */
+}
+
+/* Hover effect for the footer */
+.footer:hover {
+  background-color: #f1f1f1; /* Slightly darker background when hovered */
+  color: #333; /* Darker text color for better readability on hover */
+}
